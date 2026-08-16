@@ -15,8 +15,12 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.ingotdev.armors.ModArmorMaterials;
+import org.ingotdev.armors.ModArmors;
 import org.ingotdev.events.NoSwimEvent;
 import org.slf4j.Logger;
+
+import static org.ingotdev.armors.ModArmors.FLIPPERS;
 
 @Mod(IngotDev.MODID)
 public class IngotDev {
@@ -49,6 +53,10 @@ public class IngotDev {
 //        BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
 //        CREATIVE_MODE_TABS.register(modEventBus);
+        ModArmors.register(modEventBus);
+
+        ModArmorMaterials.register(modEventBus);
+
 
         NeoForge.EVENT_BUS.register(this);
 
@@ -63,8 +71,8 @@ public class IngotDev {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(EXAMPLE_ITEM);
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(FLIPPERS);
         }
     }
 

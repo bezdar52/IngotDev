@@ -1,5 +1,4 @@
 {
   "itemGroup.ingotteam": "Example Mod Tab",
-  "block.ingotteam.example_block": "Example Block",
-  "item.ingotteam.example_item": "Example Item"
+  "item.ingotteam.flippers": "Flippers"
 }
